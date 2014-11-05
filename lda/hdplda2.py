@@ -329,7 +329,7 @@ def output_summary(hdplda, voca, fp=None):
     phi = hdplda.worddist()
     for k, phi_k in enumerate(phi):
         fp.write("\n-- topic: %d (%d words)\n" % (hdplda.using_k[k+1], dishcount[k]))
-        for w in sorted(phi_k, key=lambda w:-phi_k[w])[:20]:
+        for w in sorted(phi_k, key=lambda w:-phi_k[w])[:30]:
             fp.write("%s: %f (%d)\n" % (voca[w], phi_k[w], wordcount[k][w]))
 
     fp.write("--- document-topic distribution\n")
